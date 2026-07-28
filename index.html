@@ -27,10 +27,33 @@
       text-align: center;
     }
 
+.card.fade-out {
+    opacity: 0;
+    transform: scale(0.97);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+@keyframes wiggle {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(-6deg); }
+    40%  { transform: rotate(6deg); }
+    60%  { transform: rotate(-4deg); }
+    80%  { transform: rotate(4deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.wiggle {
+    animation: wiggle 0.45s ease;
+}
+
     .icon {
       font-size: 42px;
       margin-bottom: 20px;
     }
+
+.icon img {
+    width: 90px;
+    height: auto;
+}
 
     h1 {
       font-size: 54px;
@@ -71,9 +94,11 @@
 
 <body>
 
-<div class="card">
+<div class="card" id="card">
 
-<div class="icon">🍿</div>
+<div class="icon" id="logo">
+    <img src="images/popcorn.png" alt="First Pop popcorn bucket">
+</div>
 
 <h1>First Pop</h1>
 
@@ -92,9 +117,9 @@ This is just the first pop 🍿
 
 <p>❤️ Elise</p>
 
-<button>Begin</button>
+<button id="beginButton">Begin</button>
 
 </div>
-
+<script src="script.js"></script>
 </body>
 </html>
